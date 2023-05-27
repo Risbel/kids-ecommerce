@@ -4,6 +4,7 @@ import classNames from "classnames";
 import Image from "next/image";
 
 import { FiHeart, FiShoppingCart, FiSearch } from "react-icons/fi";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const location = useRouter();
@@ -40,17 +41,17 @@ const Navbar = () => {
 
   return (
     <nav className="w-screen flex flex-col items-center">
+      <Sidebar items={navigation} />
       <Image
         className="w-44 h-auto"
         src="/logo.png"
-        width={100}
+        width={150}
         height={50}
         alt="Logo kids with colors"
-        placeholder="blur"
         blurDataURL={"/logo.png"}
       />
-      <div className="flex gap-12 items-center">
-        <div className="flex justify-center gap-10 py-1">
+      <div className="flex gap-12 items-center mt-4">
+        <div className="hidden md:flex justify-center gap-10 py-1">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -71,9 +72,9 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex gap-4 relative bottom-1">
-          <FiHeart className="h-5 w-5" />
-          <FiShoppingCart className="h-5 w-5" />
-          <FiSearch className="h-5 w-5" />
+          <FiHeart className="h-5 w-5 stroke-gray-600" />
+          <FiShoppingCart className="h-5 w-5 stroke-gray-600" />
+          <FiSearch className="h-5 w-5 stroke-gray-600" />
         </div>
       </div>
     </nav>

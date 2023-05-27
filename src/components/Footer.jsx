@@ -39,7 +39,7 @@ const NavFooter = () => {
 
   return (
     <nav>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap justify-center py-4 px-8">
         {navigation.map((item) => (
           <Link
             key={item.name}
@@ -47,7 +47,7 @@ const NavFooter = () => {
             className={classNames(
               "transition-colors  duration-200",
               item.current ? "underline underline-offset-2" : " hover:text-orange-600 hover:drop-shadow-lg",
-              "py-2 text-white text-sm font-semibold"
+              "py-2 px-4 text-white text-xs md:text-sm font-semibold"
             )}
           >
             <span>{item.name}</span>
@@ -62,7 +62,7 @@ const Footer = () => {
   return (
     <div className="absolute bottom-0">
       <div
-        className="flex flex-col justify-center items-center h-52 w-screen bg-ocre-kids "
+        className="flex flex-col relative justify-center items-center h-72 w-screen bg-ocre-kids "
         style={{
           "--mask":
             " radial-gradient(26.55px at 50% 37.40px,#000 99%,#0000 101%) calc(50% - 34px) 0/68px 100%, radial-gradient(26.55px at 50% -20.4px,#0000 99%,#000 101%) 50% 17px/68px 100% repeat-x",
@@ -87,11 +87,11 @@ const Footer = () => {
           <FaInstagram className="fill-white w-6 h-6" />
           <FaTwitter className="fill-white w-6 h-6" />
         </div>
-        <p className="absolute bottom-0 text-white font-light">
+        <p className="absolute bottom-0 text-white font-light text-xs md:text-lg text-center px-6">
           <span className="font-semibold">Privacy Policy</span> / This is a sample website - Provided by Risbel in 2023
         </p>
       </div>
-      <div className="text-center">
+      <div className="text-center text-xs md:text-base px-4">
         This website uses cookies to improve your experience. We will assume you are ok with this, but you can opt-out
         if you wish.
       </div>
