@@ -1,8 +1,13 @@
+import BaseLayout from "@/layouts/BaseLayout";
+import Image from "next/image";
+
 const Home = () => {
   return (
-    <main className="flex min-h-screen justify-center">
-      <h1>My e-commerce</h1>
-    </main>
+    <BaseLayout>
+      <main className="text-center">
+        <h1>My e-commerce</h1>
+      </main>
+    </BaseLayout>
   );
 };
 
