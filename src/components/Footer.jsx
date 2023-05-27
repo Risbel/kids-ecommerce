@@ -17,8 +17,8 @@ const NavFooter = () => {
     },
     {
       name: "TERMS & CONDITIONS",
-      href: "/terms&conditions",
-      current: isCurrentPath("/terms&conditions"),
+      href: "/termsAndconditions",
+      current: isCurrentPath("/termsAndconditions"),
     },
     {
       name: "CAREERS",
@@ -27,8 +27,8 @@ const NavFooter = () => {
     },
     {
       name: "CONTACT US",
-      href: "/contact-us",
-      current: isCurrentPath("/contact-us"),
+      href: "/contact",
+      current: isCurrentPath("/contact"),
     },
     {
       name: "FAQ",
