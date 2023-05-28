@@ -13,7 +13,7 @@ const Carousel = () => {
 
   return (
     <div className="relative">
-      <div className="w-full absolute top-1/2 px-2 md:hidden">
+      <div className="w-full absolute top-1/2 md:hidden">
         <div className="flex justify-between">
           <button className="hover:backdrop-blur-md rounded-full z-40" onClick={scrollLeft}>
             <HiOutlineChevronLeft className="h-8 w-8 stroke-slate-600" />
@@ -25,7 +25,7 @@ const Carousel = () => {
       </div>
       <div
         id="content"
-        className="z-10 flex px-5 gap-4 py-10 justify-start overflow-x-auto md:grid grid-cols-5 scrollbar-hide scroll-smooth"
+        className="z-10 px-4 md:px-0 flex gap-4 py-10 justify-start overflow-x-auto md:grid grid-cols-5 scrollbar-hide scroll-smooth"
       >
         <Image
           className="w-auto h-full transition hover:drop-shadow-xl hover:brightness-110 hover:-translate-y-0.5 duration-50 rounded-md"
