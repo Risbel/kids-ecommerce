@@ -37,6 +37,11 @@ const Navbar = () => {
       href: "/about-us",
       current: isCurrentPath("/about-us"),
     },
+    {
+      name: "COMPONENTS",
+      href: "/components",
+      current: isCurrentPath("/components"),
+    },
   ];
 
   return (
