@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import Input from "@/components/Input";
 import BaseLayout from "@/layouts/BaseLayout";
 import React, { useState } from "react";
 
@@ -7,18 +8,29 @@ const Components = () => {
 
   return (
     <BaseLayout>
-      <div className="px-10">
-        <h1 className="pb-5">My Buttons</h1>
-        <div className="flex items-center gap-4">
-          <Button>Hello</Button>
-          <Button variant="secondary">Hello</Button>
-          <Button disabled>Hello</Button>
-          <Button isLoading={isLoading} onClick={() => setIsLoading((prev) => !prev)}>
-            {isLoading ? "Loading..." : "Dynamic Button. Click Me!!!"}
-          </Button>
-          <Button size="sm">Hello</Button>
-          <Button size="lg">Hello</Button>
-        </div>
+      <div className="flex flex-col gap-6 px-10">
+        <>
+          <h1>My Buttons</h1>
+          <div className="flex items-center flex-wrap gap-4">
+            <Button>Hello</Button>
+            <Button variant="secondary">Hello</Button>
+            <Button disabled>Hello</Button>
+            <Button isLoading={isLoading} onClick={() => setIsLoading((prev) => !prev)}>
+              {isLoading ? "Loading..." : "Dynamic Button. Click Me!!!"}
+            </Button>
+            <Button size="sm">Hello</Button>
+            <Button size="lg">Hello</Button>
+          </div>
+        </>
+        <>
+          <h1>My inputs</h1>
+          <div className="flex items-center flex-wrap gap-4">
+            <Input placeholder="Insert your email" place size="sm" />
+            <Input placeholder="Insert your email" variant="secondary" />
+            <Input placeholder="Insert your email" size="lg" />
+            <Input placeholder="Insert your email" size="xl" />
+          </div>
+        </>
       </div>
     </BaseLayout>
   );
