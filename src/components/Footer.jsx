@@ -62,7 +62,7 @@ const Footer = () => {
   return (
     <div>
       <div
-        className="flex flex-col relative justify-center items-center h-72 bg-ocre-kids "
+        className="flex flex-col relative justify-center items-center h-72 bg-ocre-kids"
         style={{
           "--mask":
             " radial-gradient(26.55px at 50% 37.40px,#000 99%,#0000 101%) calc(50% - 34px) 0/68px 100%, radial-gradient(26.55px at 50% -20.4px,#0000 99%,#000 101%) 50% 17px/68px 100% repeat-x",

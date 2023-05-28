@@ -4,10 +4,10 @@ import BaseLayout from "@/layouts/BaseLayout";
 const Home = () => {
   return (
     <BaseLayout>
-      <main className="text-center">
+      <div className="text-center">
         <h1>My e-commerce</h1>
         <Carousel />
-      </main>
+      </div>
     </BaseLayout>
   );
 };
