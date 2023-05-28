@@ -3,11 +3,12 @@ import Navbar from "@/components/Navbar";
 
 const BaseLayout = ({ children }) => {
   return (
-    <div className="flex flex-col  h-screen">
+    <div>
       <Navbar />
-      <main>{children}</main>
-      <Footer />
-      
+      <div className="grid grid-rows-2 content-between">
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   );
 };

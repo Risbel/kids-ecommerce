@@ -60,9 +60,9 @@ const NavFooter = () => {
 
 const Footer = () => {
   return (
-    <div className="absolute bottom-0">
+    <div>
       <div
-        className="flex flex-col relative justify-center items-center h-72 w-screen bg-ocre-kids "
+        className="flex flex-col relative justify-center items-center h-72 bg-ocre-kids "
         style={{
           "--mask":
             " radial-gradient(26.55px at 50% 37.40px,#000 99%,#0000 101%) calc(50% - 34px) 0/68px 100%, radial-gradient(26.55px at 50% -20.4px,#0000 99%,#000 101%) 50% 17px/68px 100% repeat-x",
@@ -71,15 +71,17 @@ const Footer = () => {
         }}
       >
         <div className="flex justify-center items-center">
-          <Image
-            className="h-auto w-auto hover:drop-shadow-lg"
-            src="/logo_retina.png"
-            width={120}
-            height={50}
-            alt="Logo kids"
-            placeholder="blur"
-            blurDataURL={"/logo_retina.png"}
-          />
+          <Link href="/">
+            <Image
+              className="h-auto w-auto hover:drop-shadow-lg"
+              src="/logo_retina.png"
+              width={120}
+              height={50}
+              alt="Logo kids"
+              placeholder="blur"
+              blurDataURL={"/logo_retina.png"}
+            />
+          </Link>
         </div>
         <NavFooter />
         <div className="flex gap-4 mt-2">

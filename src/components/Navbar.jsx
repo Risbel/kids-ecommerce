@@ -40,16 +40,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-screen flex flex-col items-center">
+    <nav className="w-full flex flex-col items-center">
       <Sidebar items={navigation} />
-      <Image
-        className="w-44 h-auto"
-        src="/logo.png"
-        width={150}
-        height={50}
-        alt="Logo kids with colors"
-        blurDataURL={"/logo.png"}
-      />
+      <Link href="/">
+        <Image
+          className="w-44 h-auto hover:drop-shadow-md"
+          src="/logo.png"
+          width={150}
+          height={50}
+          alt="Logo kids with colors"
+          blurDataURL={"/logo.png"}
+        />
+      </Link>
       <div className="flex gap-12 items-center mt-4">
         <div className="hidden md:flex justify-center gap-10 py-1">
           {navigation.map((item) => (

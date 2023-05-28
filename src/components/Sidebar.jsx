@@ -12,7 +12,7 @@ const Sidebar = ({ items }) => {
       {!isActive ? (
         <button
           onClick={() => setIsActive((prev) => !prev)}
-          className="fixed z-40 right-3 top-3 bg-[#ffffff] active:bg-slate-100 hover:bg-orange-kids rounded-full p-2 shadow-xl"
+          className="fixed z-40 right-3 top-3 bg-[#ffffff] active:bg-orange-500 hover:bg-orange-kids rounded-full p-2 shadow-xl"
         >
           <HiOutlineMenu className="w-5 h-5 stroke-[#5c5959]" />
         </button>
@@ -21,7 +21,7 @@ const Sidebar = ({ items }) => {
           <div className="fixed z-[100] flex justify-end right-3 top-3">
             <button
               onClick={() => setIsActive((prev) => !prev)}
-              className="rounded-full hover:bg-orange-kids p-2 active:shadow-xl"
+              className="rounded-full hover:bg-orange-kids p-2 active:bg-orange-500"
             >
               <HiOutlineX className="w-5 h-5 stroke-[#5c5959]" />
             </button>
