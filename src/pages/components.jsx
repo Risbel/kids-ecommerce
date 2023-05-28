@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import Textarea from "@/components/TextArea";
 import BaseLayout from "@/layouts/BaseLayout";
 import React, { useState } from "react";
 
@@ -23,13 +24,18 @@ const Components = () => {
           </div>
         </>
         <>
-          <h1>My inputs</h1>
+          <h1>My Inputs</h1>
           <div className="flex items-center flex-wrap gap-4">
-            <Input placeholder="Insert your email" place size="sm" />
+            <Input placeholder="Insert your email" size="sm" />
             <Input placeholder="Insert your email" variant="secondary" />
             <Input placeholder="Insert your email" size="lg" />
             <Input placeholder="Insert your email" size="xl" />
           </div>
+        </>
+        <>
+          <h1>My Textarea</h1>
+          <Textarea placeholder="Insert your text here..." />
+          <Textarea variant="secondary" placeholder="Insert your text here..." />
         </>
       </div>
     </BaseLayout>

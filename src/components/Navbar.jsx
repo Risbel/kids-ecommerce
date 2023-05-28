@@ -55,6 +55,7 @@ const Navbar = () => {
           height={50}
           alt="Logo kids with colors"
           blurDataURL={"/logo.png"}
+          priority
         />
       </Link>
       <div className="flex gap-12 items-center mt-4">
