@@ -28,6 +28,11 @@ const Navbar = () => {
       current: isCurrentPath("/toys"),
     },
     {
+      name: "ALL",
+      href: "/all",
+      current: isCurrentPath("/all"),
+    },
+    {
       name: "SALES",
       href: "/sales",
       current: isCurrentPath("/sales"),
