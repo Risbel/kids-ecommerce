@@ -9,8 +9,8 @@ const classes = clsx.bind({
   secondary: "text-white bg-orangeStrong-kids border-2 placeholder-white",
   sm: "h-6",
   md: "h-8 text-xl",
-  lg: "h-10 text-2xl",
-  xl: "h-14 text-3xl",
+  lg: "h-10 w-full text-2xl",
+  xl: "h-14 w-full text-3xl",
 });
 
 const Input = ({ variant, size, className, ...props }) => {

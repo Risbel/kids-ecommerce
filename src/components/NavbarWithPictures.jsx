@@ -35,7 +35,7 @@ const NavbarWithPictures = () => {
             href={image.urlPage}
           >
             <Image className="w-auto h-auto pb-2" src={image.url} width={500} height={500} alt={image.name} priority />
-            <span className="font-semibold">{image.name}</span>
+            <span className="font-semibold text-xs md:text-sm lg:text-lg">{image.name}</span>
           </Link>
         </div>
       ))}
