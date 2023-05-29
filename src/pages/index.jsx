@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout";
 
 const Home = () => {
   return (
-    <BaseLayout>
+    <BaseLayout title="Home shop">
       <div className="text-center">
         <h1>My e-commerce</h1>
         <NavbarWithPictures />

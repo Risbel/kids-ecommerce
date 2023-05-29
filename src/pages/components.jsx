@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import Textarea from "@/components/TextArea";
+import Textarea from "@/components/Textarea";
 import BaseLayout from "@/layouts/BaseLayout";
 import React, { useState } from "react";
 
