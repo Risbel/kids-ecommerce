@@ -11,12 +11,12 @@ const NavbarWithPictures = () => {
     },
     {
       url: "/boy.png",
-      name: "For Girls",
+      name: "For Boys",
       urlPage: "/#",
     },
     {
       url: "/girl.png",
-      name: "For Boys",
+      name: "For Girls",
       urlPage: "/#",
     },
     {

@@ -10,7 +10,7 @@ const classes = clsx.bind({
   secondary: "text-slate-900",
   disabled: "bg-gray-700 opacity-30",
   sm: "px-1 py-1 text-xs font-light",
-  md: "py-2 px-2",
+  md: "py-2 px-2 text-sm md:text-md",
   lg: "py-3 px-3 text-2xl",
   xl: "py-4 px-4",
 });
@@ -24,7 +24,7 @@ const Button = ({ variant, size, disabled, className, submit, isLoading, childre
       >
         <div
           className={classes(
-            "w-auto flex items-center gap-2 p-1 border-2 px-8 border-dashed",
+            "w-auto flex items-center gap-2 p-1 border-2 px-6 md:px-8 border-dashed",
             variant === "secondary" && "border-orangeStrong-kids text-orangeStrong-kids"
           )}
         >

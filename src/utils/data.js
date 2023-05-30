@@ -2,7 +2,7 @@ const data = {
   products: [
     {
       name: "Shirt",
-      slug: "shirt",
+      slug: "shirt-white",
       category: "For Boys",
       image: "/boys-1-580x870.jpg",
       price: 70,
@@ -12,7 +12,7 @@ const data = {
     },
     {
       name: "Shirt",
-      slug: "shirt",
+      slug: "shirt-blue",
       category: "For Boys",
       image: "/boys-8-580x870(1).jpg",
       price: 80,
@@ -22,7 +22,7 @@ const data = {
     },
     {
       name: "Shirt",
-      slug: "shirt",
+      slug: "shirt-pink",
       category: "For Boys",
       image: "/boys-11-580x870.jpg",
       price: 60,
@@ -32,7 +32,7 @@ const data = {
     },
     {
       name: "Short",
-      slug: "short",
+      slug: "short-green",
       category: "For Boys",
       image: "/boys-10-580x870.jpg",
       price: 30,
@@ -42,7 +42,7 @@ const data = {
     },
     {
       name: "Short",
-      slug: "short",
+      slug: "short-white",
       category: "For Boys",
       image: "/boys-6-580x870.jpg",
       price: 25,
@@ -52,7 +52,7 @@ const data = {
     },
     {
       name: "Pullover",
-      slug: "pullover",
+      slug: "pullover-with-dinosaurs",
       category: "For Boys",
       image: "/boys-4-580x870.jpg",
       price: 20,
@@ -62,7 +62,7 @@ const data = {
     },
     {
       name: "Pullover",
-      slug: "pullover",
+      slug: "pullover-ocher",
       category: "For Boys",
       image: "/boys-8-580x870.jpg",
       price: 25,
@@ -72,7 +72,7 @@ const data = {
     },
     {
       name: "Coat",
-      slug: "coat",
+      slug: "thick-coat",
       category: "For Boys",
       image: "/boys-5-580x870.jpg",
       price: 80,

@@ -7,10 +7,10 @@ const classes = clsx.bind({
   root: "pl-2 border border-dashed font-light",
   primary: "text-gray-600 border-gray-600",
   secondary: "text-white bg-orangeStrong-kids border-2 placeholder-white",
-  sm: "h-6",
-  md: "h-8 text-xl",
-  lg: "h-10 w-full text-2xl",
-  xl: "h-14 w-full text-3xl",
+  sm: "h-8",
+  md: "h-13 md:text-xl",
+  lg: "h-14 w-full text-2xl",
+  xl: "h-16 w-full text-3xl",
 });
 
 const Input = ({ variant, size, className, ...props }) => {

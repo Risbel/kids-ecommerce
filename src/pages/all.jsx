@@ -8,7 +8,7 @@ const All = () => {
     <BaseLayout>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4 py-8">
         {data.products.map((product) => {
-          return <ProductCard key={product.image} product={product} />;
+          return <ProductCard key={product.slug} product={product} />;
         })}
       </div>
     </BaseLayout>
