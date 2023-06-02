@@ -7,22 +7,22 @@ const NavbarWithPictures = () => {
     {
       url: "/baby.png",
       name: "Baby & Toddler",
-      urlPage: "/#",
+      urlPage: "/for-baby",
     },
     {
       url: "/boy.png",
       name: "For Boys",
-      urlPage: "/#",
+      urlPage: "/boys",
     },
     {
       url: "/girl.png",
       name: "For Girls",
-      urlPage: "/#",
+      urlPage: "/girls",
     },
     {
       url: "/toys.png",
       name: "Home & Toys",
-      urlPage: "/#",
+      urlPage: "/home-and-toys",
     },
   ];
 
