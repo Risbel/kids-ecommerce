@@ -50,7 +50,7 @@ const DetailsProduct = () => {
         <div className="flex flex-col gap-4  text-center">
           <h1 className="text-3xl text-gray-600">{product.name}</h1>
           <p className="text-md text-gray-600">
-            {product.category}: <span className="text-red-600">{product.name}</span>
+            {product.sexOrAge}: <span className="text-red-600">{product.name}</span>
           </p>
         </div>
       </div>
