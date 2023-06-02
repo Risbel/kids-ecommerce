@@ -21,6 +21,12 @@ const data = {
       rating: 5,
       countInStock: 10,
       description: "soft and fluffy",
+      morePictures: [
+        {
+          image: "/toys-4-2-580x870.jpg",
+          alt: "A pink teddy",
+        },
+      ],
     },
     {
       name: "shirt",
@@ -31,7 +37,7 @@ const data = {
       price: 60,
       rating: 4.6,
       countInStock: 8,
-      description: "A popular shirt",
+      description: "A popular shirt color pink",
     },
     {
       name: "short",
@@ -46,14 +52,20 @@ const data = {
     },
     {
       name: "short",
-      slug: "short-green",
+      slug: "green-short",
       sexOrAge: "For Boys",
       category: "clothes",
       image: "/boys-10-580x870.jpg",
       price: 30,
       rating: 4.3,
       countInStock: 18,
-      description: "Popular beach short",
+      description: "Popular short",
+      morePictures: [
+        {
+          image: "/boys-10-1-580x870.jpg",
+          alt: "green-short",
+        },
+      ],
     },
     {
       name: "pullover",
@@ -75,7 +87,7 @@ const data = {
       price: 3,
       rating: 5,
       countInStock: 10,
-      description: "adorable and soft",
+      description: "Adorable and soft",
     },
     {
       name: "pullover",
@@ -130,7 +142,28 @@ const data = {
       price: 4,
       rating: 5,
       countInStock: 10,
-      description: "soft and fluffy",
+      description: "Soft and fluffy",
+    },
+    {
+      name: "overalls",
+      slug: "overalls-for-kids",
+      sexOrAge: "For Babys",
+      category: "clothes",
+      image: "/for-babies-1-580x870.jpg",
+      price: 12,
+      rating: 5,
+      countInStock: 12,
+      description: "comfortable and cotton",
+      morePictures: [
+        {
+          image: "/for-babies-1-1-580x870.jpg",
+          alt: "overall",
+        },
+        {
+          image: "/for-babies-1-580x870.jpg",
+          alt: "overall-other",
+        },
+      ],
     },
   ],
 };

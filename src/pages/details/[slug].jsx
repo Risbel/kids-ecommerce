@@ -60,6 +60,11 @@ const DetailsProduct = () => {
           <div className="col-span-12">
             <Image src={product.image} width={600} height={600} alt={product.slug} />
           </div>
+          <div className="col-span-3">
+            {product?.morePictures?.map((picture) => (
+              <Image src={picture?.image} width={600} height={600} alt={picture?.alt} key={picture?.alt} />
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-col gap-10">
@@ -73,9 +78,8 @@ const DetailsProduct = () => {
             </p>
           </div>
           <div className="flex gap-4">
-            <span>{existItem?.quantity}</span>
-
             <Button onClick={addToCartHandler}>Add to cart</Button>
+            <span>{existItem?.quantity}</span>
           </div>
         </div>
       </div>
