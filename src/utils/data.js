@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      name: "Shirt",
+      name: "shirt",
       slug: "shirt-white",
       category: "For Boys",
       image: "/boys-1-580x870.jpg",
@@ -11,7 +11,7 @@ const data = {
       description: "A popular shirt",
     },
     {
-      name: "Shirt",
+      name: "shirt",
       slug: "shirt-blue",
       category: "For Boys",
       image: "/boys-8-580x870(1).jpg",
@@ -21,7 +21,7 @@ const data = {
       description: "A beautiful blue shirt",
     },
     {
-      name: "Shirt",
+      name: "shirt",
       slug: "shirt-pink",
       category: "For Boys",
       image: "/boys-11-580x870.jpg",
@@ -31,7 +31,7 @@ const data = {
       description: "A popular shirt",
     },
     {
-      name: "Short",
+      name: "short",
       slug: "short-green",
       category: "For Boys",
       image: "/boys-10-580x870.jpg",
@@ -41,7 +41,7 @@ const data = {
       description: "Popular beach short",
     },
     {
-      name: "Short",
+      name: "short",
       slug: "short-white",
       category: "For Boys",
       image: "/boys-6-580x870.jpg",
@@ -51,7 +51,7 @@ const data = {
       description: "Popular beach short",
     },
     {
-      name: "Pullover",
+      name: "pullover",
       slug: "pullover-with-dinosaurs",
       category: "For Boys",
       image: "/boys-4-580x870.jpg",
@@ -61,7 +61,7 @@ const data = {
       description: "A popular pullover",
     },
     {
-      name: "Pullover",
+      name: "pullover",
       slug: "pullover-ocher",
       category: "For Boys",
       image: "/boys-8-580x870.jpg",
@@ -71,7 +71,7 @@ const data = {
       description: "A beautiful pullover",
     },
     {
-      name: "Coat",
+      name: "coat",
       slug: "thick-coat",
       category: "For Boys",
       image: "/boys-5-580x870.jpg",

@@ -24,7 +24,7 @@ const Button = ({ variant, size, disabled, className, submit, isLoading, childre
       >
         <div
           className={classes(
-            "w-auto flex items-center gap-2 p-1 border-2 px-6 md:px-8 border-dashed",
+            "w-auto flex items-center gap-2 p-1 border-2 px-2 md:px-8 border-dashed",
             variant === "secondary" && "border-orangeStrong-kids text-orangeStrong-kids"
           )}
         >

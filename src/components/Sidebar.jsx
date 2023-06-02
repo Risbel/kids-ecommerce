@@ -37,10 +37,11 @@ const Sidebar = ({ items }) => {
                   )}
                   href={item.href}
                 >
-                  <div className="flex flex-col">
-                    {item.name}
+                  <div className="flex flex-col items-center">
+                    <span>{item.name}</span>
+
                     {item.current && (
-                      <Image className="h-auto w-auto" src="/home-8.png" width={40} height={10} alt="Underline" />
+                      <Image className="h-2 w-auto" src="/home-8.png" width={200} height={50} alt="Underline" />
                     )}
                   </div>
                 </Link>

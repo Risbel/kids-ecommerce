@@ -1,11 +1,21 @@
+import { Store } from "@/utils/Store";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 
 const ProductCard = ({ product }) => {
+  const { state } = useContext(Store);
+  const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
+
   return (
     <div className="text-center">
-      <Link href={`/details/${product.slug}`}>
+      <Link className="relative" href={`/details/${product.slug}`}>
+        <div className="absolute p-4">{existItem?.quantity}</div>
+        {existItem?.quantity > product.countInStock - 1 && (
+          <div className="absolute right-2 top-2 md:right-4 md:top-4 bg-white rounded-3xl px-3 py-1">
+            <span className="truncate text-xs md:text-sm text-gray-500">out of stock</span>
+          </div>
+        )}
         <Image priority width={500} height={500} alt={product.name} src={product.image} />
       </Link>
 

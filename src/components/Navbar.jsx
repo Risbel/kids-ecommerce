@@ -5,8 +5,18 @@ import Image from "next/image";
 
 import { FiHeart, FiShoppingCart, FiSearch } from "react-icons/fi";
 import Sidebar from "./Sidebar";
+import { useContext, useEffect, useState } from "react";
+import { Store } from "@/utils/Store";
 
 const Navbar = () => {
+  const { state } = useContext(Store);
+  const { cart } = state;
+  const [cartItemsCount, setcartItemsCount] = useState(0);
+
+  useEffect(() => {
+    setcartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+  }, [cart.cartItems]);
+
   const location = useRouter();
 
   const isCurrentPath = (path) => path === location?.pathname;
@@ -75,10 +85,11 @@ const Navbar = () => {
                 "py-2 rounded-md text-md font-semibold"
               )}
             >
-              <div>
+              <div className="flex flex-col items-center">
                 <span>{item.name}</span>
+
                 {item.current && (
-                  <Image className="h-auto w-auto" src="/home-8.png" width={40} height={10} alt="Underline" />
+                  <Image className="h-2 w-auto" src="/home-8.png" width={200} height={50} alt="Underline" />
                 )}
               </div>
             </Link>
@@ -86,7 +97,14 @@ const Navbar = () => {
         </div>
         <div className="flex gap-4 relative bottom-1">
           <FiHeart className="h-5 w-5 stroke-gray-600" />
-          <FiShoppingCart className="h-5 w-5 stroke-gray-600" />
+          <Link href="/cart">
+            <div className="flex">
+              <FiShoppingCart className="h-5 w-5 stroke-gray-600 -mr-1" />
+              <span className="flex justify-center items-center text-xs bg-orange-kids px-1  rounded-full -translate-y-3">
+                {cartItemsCount}
+              </span>
+            </div>
+          </Link>
           <FiSearch className="h-5 w-5 stroke-gray-600" />
         </div>
       </div>
