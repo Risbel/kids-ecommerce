@@ -26,6 +26,10 @@ const data = {
           image: "/toys-4-2-580x870.jpg",
           alt: "A pink teddy",
         },
+        {
+          image: "/toys-4-580x870.jpg",
+          alt: "A pink teddy original",
+        },
       ],
     },
     {
@@ -64,6 +68,10 @@ const data = {
         {
           image: "/boys-10-1-580x870.jpg",
           alt: "green-short",
+        },
+        {
+          image: "/boys-10-580x870.jpg",
+          alt: "green-short-other",
         },
       ],
     },
