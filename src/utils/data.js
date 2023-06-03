@@ -10,6 +10,16 @@ const data = {
       rating: 4.8,
       countInStock: 10,
       description: "A beautiful blue shirt",
+      morePictures: [
+        {
+          image: "/boys-8-1-580x870.jpg",
+          alt: "Boy with blue shirt",
+        },
+        {
+          image: "/boys-8-580x870(1).jpg",
+          alt: "A beautiful blue shirt",
+        },
+      ],
     },
     {
       name: "teddy",
@@ -42,6 +52,16 @@ const data = {
       rating: 4.6,
       countInStock: 8,
       description: "A popular shirt color pink",
+      morePictures: [
+        {
+          image: "/boys-11-1-580x870.jpg",
+          alt: "Boy with pink shirt",
+        },
+        {
+          image: "/boys-11-580x870.jpg",
+          alt: "A popular shirt color pink",
+        },
+      ],
     },
     {
       name: "short",
@@ -53,6 +73,16 @@ const data = {
       rating: 4,
       countInStock: 25,
       description: "Popular beach short",
+      morePictures: [
+        {
+          image: "/boys-6-1-580x870.jpg",
+          alt: "Boy with white short",
+        },
+        {
+          image: "/boys-6-580x870.jpg",
+          alt: "Popular beach short",
+        },
+      ],
     },
     {
       name: "short",
@@ -85,6 +115,16 @@ const data = {
       rating: 4.6,
       countInStock: 15,
       description: "A popular pullover",
+      morePictures: [
+        {
+          image: "/boys-4-1-580x870.jpg",
+          alt: "Boy with pullover with dinosaurus",
+        },
+        {
+          image: "/boys-4-580x870.jpg",
+          alt: "A popular pullover",
+        },
+      ],
     },
     {
       name: "teddy",
@@ -128,7 +168,17 @@ const data = {
       price: 2,
       rating: 5,
       countInStock: 10,
-      description: "cup with ears",
+      description: "Cup with ears",
+      morePictures: [
+        {
+          image: "/for-home-12-580x870.jpg",
+          alt: "Pink cup with ears",
+        },
+        {
+          image: "/for-home-12-1-580x870.jpg",
+          alt: "Cup with ears",
+        },
+      ],
     },
     {
       name: "coat",
@@ -140,6 +190,16 @@ const data = {
       rating: 4.2,
       countInStock: 22,
       description: "A thick coat for boys",
+      morePictures: [
+        {
+          image: "/boys-5-1-580x870.jpg",
+          alt: "boy-with-coat",
+        },
+        {
+          image: "/boys-5-580x870.jpg",
+          alt: "A thick coat for boys",
+        },
+      ],
     },
     {
       name: "teddy",
