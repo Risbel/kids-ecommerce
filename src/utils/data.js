@@ -158,6 +158,16 @@ const data = {
       rating: 4.5,
       countInStock: 20,
       description: "A popular shirt",
+      morePictures: [
+        {
+          image: "/boys-1-1-580x870.jpg",
+          alt: "Boy with white shirt ",
+        },
+        {
+          image: "/boys-1-580x870.jpg",
+          alt: "A popular shirt",
+        },
+      ],
     },
     {
       name: "cup",
