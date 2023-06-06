@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import clsx from "classnames/bind";
 
-const CarouselHero = ({ slides, size = "sm", autoSlide = false, autoSlideInterval = 3000 }) => {
+const CarouselHero = ({ slides, autoSlide = false, autoSlideInterval = 3000 }) => {
   const [curr, setCurr] = useState(0);
 
   const prev = () => setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
@@ -15,32 +15,44 @@ const CarouselHero = ({ slides, size = "sm", autoSlide = false, autoSlideInterva
   });
 
   return (
-    <div className={clsx("relative overflow-hidden", `max-w-${size}`)}>
-      <div
-        className="flex transition-transform ease-out duration-1000"
-        style={{ transform: `translateX(-${curr * 100}%)` }}
-      >
+    <div className={clsx("flex flex-col flex-shrink")}>
+      <div className="flex overflow-hidden relative  max-w-[290px]">
         {slides.map((s) => (
-          <Image className="w-auto h-auto" priority src={s} width={500} height={500} key={s} alt={s} />
+          <Image
+            style={{ transform: `translateX(-${curr * 100}%)` }}
+            className="duration-700 ease-out transition-transform"
+            priority
+            src={s}
+            width={500}
+            height={700}
+            key={s}
+            alt={s}
+          />
         ))}
-      </div>
-      <div className="absolute inset-0 flex items-center justify-between">
-        <button onClick={prev} className="h-full w-1/2"></button>
-        <button onClick={next} className="h-full w-1/2"></button>
+
+        <div className="absolute inset-0 flex">
+          <button onClick={prev} className="h-full w-1/2"></button>
+          <button onClick={next} className="h-full w-1/2"></button>
+        </div>
+
+        <div className="absolute md:bottom-4 lg:bottom-8 right-0 left-0">
+          <div className="flex items-center justify-center gap-2 md:gap-4">
+            {slides.map((slide, i) => (
+              <div
+                key={slide}
+                className={`
+              transition-all duration-200 w-2 h-2 bg-cyan-800 rounded-full
+              ${curr === i ? "bg-cyan-800" : "bg-opacity-30"}
+            `}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="absolute bottom-8 right-0 left-0">
-        <div className="flex items-center justify-center gap-4">
-          {slides.map((slide, i) => (
-            <div
-              key={slide}
-              className={`
-              transition-all w-2 h-2 bg-white rounded-full
-              ${curr === i ? "p-1.5" : "bg-opacity-50"}
-            `}
-            />
-          ))}
-        </div>
+      <div className="py-4">
+        <h2 className="text-xl text-cyan-700 font-bold">GIRL POWER</h2>
+        <p className="text-gray-500">For a colorful summer</p>
       </div>
     </div>
   );
