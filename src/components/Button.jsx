@@ -6,7 +6,7 @@ import clsx from "classnames/bind";
 const classes = clsx.bind({
   root: "font-semibold",
   animated: "transition-shadow hover:shadow-xl active:opacity-90",
-  primary: "text-slate-200 bg-orangeStrong-kids",
+  primary: "text-white bg-orangeStrong-kids",
   secondary: "text-orangeStrong-kids bg-white",
   tertiary: "text-cyan-800 bg-white",
   disabled: "bg-gray-700 opacity-30",
@@ -26,6 +26,7 @@ const Button = ({ variant, size, disabled, className, submit, isLoading, childre
         <div
           className={classes(
             "w-auto flex items-center gap-2 p-1 border-2 px-2 md:px-8 border-dashed",
+            variant === "primary" && "border-white",
             variant === "secondary" && "border-orangeStrong-kids",
             variant === "tertiary" && "border-cyan-800"
           )}

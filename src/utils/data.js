@@ -7,7 +7,7 @@ const data = {
       category: "clothes",
       image: "/boys-8-580x870(1).jpg",
       price: 80,
-      rating: 4.8,
+      rating: 5,
       countInStock: 10,
       description: "A beautiful blue shirt",
       morePictures: [
@@ -49,7 +49,7 @@ const data = {
       category: "clothes",
       image: "/boys-11-580x870.jpg",
       price: 60,
-      rating: 4.6,
+      rating: 4,
       countInStock: 8,
       description: "A popular shirt color pink",
       morePictures: [
@@ -91,7 +91,7 @@ const data = {
       category: "clothes",
       image: "/boys-10-580x870.jpg",
       price: 30,
-      rating: 4.3,
+      rating: 3,
       countInStock: 18,
       description: "Popular short",
       morePictures: [
@@ -112,7 +112,7 @@ const data = {
       category: "clothes",
       image: "/boys-4-580x870.jpg",
       price: 20,
-      rating: 4.6,
+      rating: 5,
       countInStock: 15,
       description: "A popular pullover",
       morePictures: [
@@ -144,7 +144,7 @@ const data = {
       category: "clothes",
       image: "/boys-8-580x870.jpg",
       price: 25,
-      rating: 4.8,
+      rating: 5,
       countInStock: 15,
       description: "A beautiful pullover",
     },
@@ -155,7 +155,7 @@ const data = {
       category: "clothes",
       image: "/boys-1-580x870.jpg",
       price: 70,
-      rating: 4.5,
+      rating: 4,
       countInStock: 20,
       description: "A popular shirt",
       morePictures: [
@@ -197,7 +197,7 @@ const data = {
       category: "clothes",
       image: "/boys-5-580x870.jpg",
       price: 80,
-      rating: 4.2,
+      rating: 4,
       countInStock: 22,
       description: "A thick coat for boys",
       morePictures: [

@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useContext, useState } from "react";
 import Button from "./Button";
 import { Store } from "@/utils/Store";
+import { Rating } from "@material-tailwind/react";
 
 const ImagesCard = ({ product }) => {
   const [image, setImage] = useState(product.image);
@@ -51,10 +52,10 @@ const ProductCardDetails = ({ product }) => {
     <div className="grid md:grid-cols-2 justify-center px-10 md:px-32 lg:px-60 py-12 gap-16">
       <ImagesCard product={product} />
       <div className="flex flex-col gap-10">
-        <div className="text-sm md:text-md font-semibold text-gray-500">
-          <span className="text-black"> ${product.price}.00</span>
-          <div>Rate {product.rating}</div>
-          <p>
+        <div className="flex flex-col md:gap-4 text-sm md:text-md  ">
+          <span className="text-black"> $ {product.price}.00</span>
+          <Rating value={product.rating} readonly />
+          <p className="text-gray-700">
             {product.description}, lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laboriosam minus,
             nam non rem ex accusantium id eum magni! Expedita quos at accusantium laudantium ullam vitae nihil aliquid
             repudiandae nam!
