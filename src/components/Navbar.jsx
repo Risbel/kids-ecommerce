@@ -73,8 +73,8 @@ const Navbar = () => {
           priority
         />
       </Link>
-      <div className="flex gap-12 items-center mt-4">
-        <div className="hidden md:flex justify-center gap-10 py-1">
+      <div className="flex flex-wrap justify-center md:gap-8 items-center mt-4">
+        <div className="hidden md:flex justify-center gap-6 lg:gap-8 py-1">
           {navigation.map((item) => (
             <Link
               key={item.name}

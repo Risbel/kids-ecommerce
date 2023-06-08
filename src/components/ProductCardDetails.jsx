@@ -14,15 +14,17 @@ const ImagesCard = ({ product }) => {
   return (
     <div className="grid grid-cols-12 gap-2">
       <div className="col-span-12">
-        <Image src={image} width={600} height={600} alt={product.slug} />
+        <Image src={image} width={580} height={870} alt={product.slug} placeholder="blur" blurDataURL={image} />
       </div>
 
       {product?.morePictures?.map((picture) => (
         <div className="col-span-3" key={picture?.alt}>
           <Image
             src={picture?.image}
-            width={600}
-            height={600}
+            placeholder="blur"
+            blurDataURL={picture?.image}
+            width={580}
+            height={870}
             alt={picture?.alt}
             onClick={() => handlerClick(picture?.image)}
           />

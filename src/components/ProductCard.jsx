@@ -18,21 +18,25 @@ const ProductCard = ({ product }) => {
         )}
         <div className="relative overflow-hidden">
           <Image
-            className={`${product.morePictures && "hover:opacity-0 transition-opacity duration-700"}`}
+            className={`object-cover ${product.morePictures && "hover:opacity-0 transition-opacity duration-700"}`}
             priority
-            width={500}
-            height={500}
+            width={580}
+            height={870}
             alt={product.name}
             src={product.image}
+            placeholder="blur"
+            blurDataURL="/placeholder.png"
           />
           {product.morePictures && (
             <Image
               className="absolute object-cover top-0 left-0 -z-10"
               priority
-              width={500}
-              height={500}
+              width={580}
+              height={870}
               alt={product.name}
               src={product.morePictures[0].image}
+              placeholder="blur"
+              blurDataURL="/placeholder.png"
             />
           )}
         </div>

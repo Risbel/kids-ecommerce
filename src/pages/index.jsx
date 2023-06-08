@@ -15,8 +15,8 @@ const Home = () => {
           <div className="relative px-4 md:px-0 flex-grow">
             <div className="absolute bottom-4 left-8 md:bottom-8 md:left-8">
               <div className="relative flex flex-col gap-3 items-start">
-                <h2 className="text-2xl md:text-5xl font-semibold text-white">JOMPSUITS</h2>
-                <p className="text-left text-white relative -translate-y-2 text-sm md:text-lg">
+                <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold text-white">JOMPSUITS</h2>
+                <p className="text-left text-white relative -translate-y-2 text-sm lg:text-lg">
                   Comfottable clothes for your lettle babies
                 </p>
                 <Button variant="tertiary">DISCOVER</Button>
@@ -24,11 +24,14 @@ const Home = () => {
             </div>
 
             <Image
-              className="h-full w-full object-cover"
+              className="object-cover h-full"
               src="/slider-1.jpg"
-              height={500}
-              width={700}
+              height={518}
+              width={768}
               alt="Baby with jumpsuits"
+              priority
+              blurDataURL="/placeholder.png"
+              placeholder="blur"
             />
           </div>
           <div className="hidden md:block">

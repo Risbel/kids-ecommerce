@@ -28,7 +28,7 @@ const Carousel = () => {
         className="z-10 px-4 md:px-0 flex gap-4 py-10 justify-start overflow-x-auto md:grid grid-cols-5 scrollbar-hide scroll-smooth"
       >
         <Image
-          className="w-auto h-full transition hover:drop-shadow-xl hover:brightness-110 hover:-translate-y-0.5 duration-50 rounded-md"
+          className="object-cover transition hover:drop-shadow-xl hover:brightness-110 hover:-translate-y-0.5 duration-50 rounded-md"
           width={500}
           height={500}
           src="/84981049_620107085435507_4260875787090681190_nlow.jpg"
@@ -36,7 +36,7 @@ const Carousel = () => {
           priority
         />
         <Image
-          className="w-auto h-full transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
+          className="object-cover transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
           width={500}
           height={500}
           src="/85051426_2060664737412512_8458893884651247910_nlow.jpg"
@@ -44,7 +44,7 @@ const Carousel = () => {
           priority
         />
         <Image
-          className="w-auto h-full transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
+          className="object-cover transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
           width={500}
           height={500}
           src="/85069033_185901059177965_6767010623440980864_nlow.jpg"
@@ -52,7 +52,7 @@ const Carousel = () => {
           priority
         />
         <Image
-          className="w-auto h-full transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
+          className="object-cover transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
           width={500}
           height={500}
           src="/87339849_530805007551424_292323017375800029_nlow.jpg"
@@ -60,7 +60,7 @@ const Carousel = () => {
           priority
         />
         <Image
-          className="w-auto h-full transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
+          className="object-cover transition hover:drop-shadow-2xl hover:brightness-110 hover:-translate-y-0.5 duration-50  rounded-md"
           width={500}
           height={500}
           src="/87413583_2660130777540405_5722961474466513534_nlow.jpg"
