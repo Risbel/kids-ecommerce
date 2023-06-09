@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
 
-module.exports = withMT({
+module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -18,4 +17,4 @@ module.exports = withMT({
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
-});
+};

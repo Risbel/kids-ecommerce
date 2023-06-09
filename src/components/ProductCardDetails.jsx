@@ -2,9 +2,9 @@ import Image from "next/image";
 import React, { useContext, useState } from "react";
 import Button from "./Button";
 import { Store } from "@/utils/Store";
-import { Rating } from "@material-tailwind/react";
 import Input from "./Input";
 import Link from "next/link";
+import { Rating } from "@mui/material";
 
 const ImagesCard = ({ product }) => {
   const [image, setImage] = useState(product.image);
@@ -69,7 +69,14 @@ const ProductCardDetails = ({ product }) => {
       <div className="flex flex-col gap-10">
         <div className="flex flex-col md:gap-4 text-sm md:text-md  ">
           <span className="text-black"> $ {product.price}.00</span>
-          <Rating value={product.rating} ratedColor="orange" readonly />
+          <Rating
+            precision={0.5}
+            readOnly
+            style={{ color: "#FF865E" }}
+            name="size-medium"
+            defaultValue={product.rating}
+          />
+
           <p className="text-gray-700">
             {product.description}, lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laboriosam minus,
             nam non rem ex accusantium id eum magni!
