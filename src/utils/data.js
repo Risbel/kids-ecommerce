@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      sku: "001",
       name: "shirt",
       slug: "shirt-blue",
       sexOrAge: "For Boys",
@@ -22,6 +23,7 @@ const data = {
       ],
     },
     {
+      sku: "002",
       name: "teddy",
       slug: "pink-teddy",
       sexOrAge: "For Girls",
@@ -43,6 +45,7 @@ const data = {
       ],
     },
     {
+      sku: "003",
       name: "shirt",
       slug: "shirt-pink",
       sexOrAge: "For Boys",
@@ -64,6 +67,7 @@ const data = {
       ],
     },
     {
+      sku: "003",
       name: "short",
       slug: "short-white",
       sexOrAge: "For Boys",
@@ -85,6 +89,7 @@ const data = {
       ],
     },
     {
+      sku: "004",
       name: "short",
       slug: "green-short",
       sexOrAge: "For Boys",
@@ -106,6 +111,7 @@ const data = {
       ],
     },
     {
+      sku: "005",
       name: "pullover",
       slug: "pullover-with-dinosaurs",
       sexOrAge: "For Boys",
@@ -127,6 +133,7 @@ const data = {
       ],
     },
     {
+      sku: "006",
       name: "teddy",
       slug: "monkey-teddy",
       sexOrAge: "For Boys",
@@ -138,6 +145,7 @@ const data = {
       description: "Adorable and soft",
     },
     {
+      sku: "007",
       name: "pullover",
       slug: "pullover-ocher",
       sexOrAge: "For Boys",
@@ -149,6 +157,7 @@ const data = {
       description: "A beautiful pullover",
     },
     {
+      sku: "008",
       name: "shirt",
       slug: "shirt-white",
       sexOrAge: "For Boys",
@@ -170,6 +179,7 @@ const data = {
       ],
     },
     {
+      sku: "009",
       name: "cup",
       slug: "pink-cup",
       sexOrAge: "For Girls",
@@ -191,6 +201,7 @@ const data = {
       ],
     },
     {
+      sku: "010",
       name: "coat",
       slug: "thick-coat",
       sexOrAge: "For Boys",
@@ -212,6 +223,7 @@ const data = {
       ],
     },
     {
+      sku: "011",
       name: "teddy",
       slug: "white-teddy",
       sexOrAge: "For Girls",
@@ -223,6 +235,7 @@ const data = {
       description: "Soft and fluffy",
     },
     {
+      sku: "012",
       name: "overalls",
       slug: "overalls-for-kids",
       sexOrAge: "For Babys",

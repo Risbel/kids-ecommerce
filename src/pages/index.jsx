@@ -5,7 +5,13 @@ import NavbarWithPictures from "@/components/NavbarWithPictures";
 import BaseLayout from "@/layouts/BaseLayout";
 import Image from "next/image";
 
-const slides = ["/boys-1-580x870.jpg", "/for-home-12-1-580x870.jpg", "/boys-5-580x870.jpg", "/boys-8-580x870(1).jpg"];
+const slides = [
+  "/girls-power.jpg",
+  "/boys-1-580x870.jpg",
+  "/for-home-12-1-580x870.jpg",
+  "/boys-5-580x870.jpg",
+  "/boys-8-580x870(1).jpg",
+];
 
 const Home = () => {
   return (

@@ -18,24 +18,22 @@ const classes = clsx.bind({
 
 const Button = ({ variant, size, disabled, className, submit, isLoading, children, ...props }) => {
   return (
-    <div>
-      <button
-        className={classes("root", variant, !disabled && "animated", size, disabled && "disabled", className)}
-        {...props}
+    <button
+      className={classes("root", variant, !disabled && "animated", size, disabled && "disabled", className)}
+      {...props}
+    >
+      <div
+        className={classes(
+          "w-auto flex items-center justify-center gap-2 p-1 border-2 px-2 md:px-8 border-dashed",
+          variant === "primary" && "border-white",
+          variant === "secondary" && "border-orangeStrong-kids",
+          variant === "tertiary" && "border-cyan-800"
+        )}
       >
-        <div
-          className={classes(
-            "w-auto flex items-center gap-2 p-1 border-2 px-2 md:px-8 border-dashed",
-            variant === "primary" && "border-white",
-            variant === "secondary" && "border-orangeStrong-kids",
-            variant === "tertiary" && "border-cyan-800"
-          )}
-        >
-          {isLoading && "spinner"}
-          {children}
-        </div>
-      </button>
-    </div>
+        {isLoading && "spinner"}
+        {children}
+      </div>
+    </button>
   );
 };
 
