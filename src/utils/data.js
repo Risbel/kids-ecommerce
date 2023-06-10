@@ -8,7 +8,7 @@ const data = {
       category: "clothes",
       image: "/boys-8-580x870(1).jpg",
       price: 80,
-      rating: 4.5,
+      rating: 5,
       countInStock: 10,
       description: "A beautiful blue shirt",
       morePictures: [
@@ -29,10 +29,10 @@ const data = {
       sexOrAge: "For Girls",
       category: "toys",
       image: "/toys-4-580x870.jpg",
-      price: 4.5,
-      rating: 5,
+      price: 5,
+      rating: 4.5,
       countInStock: 10,
-      description: "soft and fluffy",
+      description: "soft and fluffy teddy",
       morePictures: [
         {
           image: "/toys-4-2-580x870.jpg",
@@ -96,7 +96,7 @@ const data = {
       category: "clothes",
       image: "/boys-10-580x870.jpg",
       price: 30,
-      rating: 4.5,
+      rating: 4.0,
       countInStock: 18,
       description: "Popular short",
       morePictures: [
@@ -118,7 +118,7 @@ const data = {
       category: "clothes",
       image: "/boys-4-580x870.jpg",
       price: 20,
-      rating: 5,
+      rating: 3.5,
       countInStock: 15,
       description: "A popular pullover",
       morePictures: [
@@ -140,9 +140,9 @@ const data = {
       category: "toys",
       image: "/for-home-6-580x870.jpg",
       price: 3,
-      rating: 5,
+      rating: 4.2,
       countInStock: 10,
-      description: "Adorable and soft",
+      description: "Adorable and soft teddy",
     },
     {
       sku: "007",
@@ -164,7 +164,7 @@ const data = {
       category: "clothes",
       image: "/boys-1-580x870.jpg",
       price: 70,
-      rating: 4,
+      rating: 3.5,
       countInStock: 20,
       description: "A popular shirt",
       morePictures: [
@@ -186,7 +186,7 @@ const data = {
       category: "home",
       image: "/for-home-12-1-580x870.jpg",
       price: 2,
-      rating: 5,
+      rating: 3.4,
       countInStock: 10,
       description: "Cup with ears",
       morePictures: [
@@ -232,19 +232,19 @@ const data = {
       price: 4,
       rating: 3.5,
       countInStock: 10,
-      description: "Soft and fluffy",
+      description: "Soft and fluffy teddy",
     },
     {
       sku: "012",
       name: "overalls",
       slug: "overalls-for-kids",
-      sexOrAge: "For Babys",
+      sexOrAge: "For Babies",
       category: "clothes",
       image: "/for-babies-1-580x870.jpg",
       price: 12,
-      rating: 4.5,
+      rating: 4.0,
       countInStock: 12,
-      description: "comfortable and cotton",
+      description: "Confortable and cotton overalls",
       morePictures: [
         {
           image: "/for-babies-1-1-580x870.jpg",

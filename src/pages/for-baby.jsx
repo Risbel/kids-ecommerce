@@ -4,7 +4,7 @@ import data from "@/utils/data";
 import React from "react";
 
 const ForBaby = () => {
-  const forBaby = data.products.filter((product) => product.sexOrAge === "For Babys");
+  const forBaby = data.products.filter((product) => product.sexOrAge === "For Babies");
 
   return (
     <BaseLayout>

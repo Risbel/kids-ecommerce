@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import Carousel from "@/components/Carousel";
 import CarouselHero from "@/components/CarouselHero";
 import NavbarWithPictures from "@/components/NavbarWithPictures";
+import NewArribals from "@/components/NewArribals";
 import BaseLayout from "@/layouts/BaseLayout";
 import Image from "next/image";
 
@@ -46,6 +47,7 @@ const Home = () => {
         </div>
 
         <NavbarWithPictures />
+        <NewArribals />
         <h2 className="text-xl text-cyan-700 font-bold text-center pt-16">INSTAGRAM @KIDSRUS</h2>
         <Carousel />
       </div>

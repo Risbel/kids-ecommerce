@@ -16,7 +16,7 @@ const classes = clsx.bind({
   xl: "py-4 px-4",
 });
 
-const Button = ({ variant, size, disabled, className, submit, isLoading, children, ...props }) => {
+const Button = ({ variant, size, disabled, paddingNone, className, submit, isLoading, children, ...props }) => {
   return (
     <button
       className={classes("root", variant, !disabled && "animated", size, disabled && "disabled", className)}
@@ -24,7 +24,8 @@ const Button = ({ variant, size, disabled, className, submit, isLoading, childre
     >
       <div
         className={classes(
-          "w-auto flex items-center justify-center gap-2 p-1 border-2 px-2 md:px-8 border-dashed",
+          "w-auto flex items-center justify-center gap-2 p-1 border-2  border-dashed",
+          paddingNone ? "px-1 md:px-1" : "px-2 md:px-8",
           variant === "primary" && "border-white",
           variant === "secondary" && "border-orangeStrong-kids",
           variant === "tertiary" && "border-cyan-800"
@@ -43,6 +44,7 @@ Button.propTypes = {
   isLoading: PropTypes.bool,
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  paddingNone: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -50,6 +52,7 @@ Button.defaultProps = {
   size: "md",
   isLoading: false,
   disabled: false,
+  paddingNone: false,
   className: null,
 };
 

@@ -8,7 +8,7 @@ const classes = clsx.bind({
   primary: "text-gray-600 border-gray-600",
   secondary: "text-white bg-orangeStrong-kids border-2 placeholder-white",
   sm: "h-8",
-  md: "h-13 md:text-xl",
+  md: "h-12 md:text-xl",
   lg: "h-14 w-full text-2xl",
   xl: "h-16 w-full text-3xl",
 });
