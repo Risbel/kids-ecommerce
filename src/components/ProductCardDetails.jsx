@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Button from "./Button";
 import { Store } from "@/utils/Store";
 import Input from "./Input";
@@ -9,6 +9,10 @@ import { Rating } from "@mui/material";
 const ImagesCard = ({ product }) => {
   const [image, setImage] = useState(product.image);
 
+  useEffect(() => {
+    setImage(product.image);
+  }, [product]);
+
   const handlerClick = (picture) => {
     setImage(picture);
   };
@@ -17,20 +21,21 @@ const ImagesCard = ({ product }) => {
     <div className="grid grid-cols-12 gap-2">
       <div className="col-span-12">
         <Image
-          className="object-cover"
+          className="object-cover opacity-0 transition-opacity duration-700"
           src={image}
           width={580}
           height={870}
           alt={product.slug}
           placeholder="blur"
           blurDataURL="/placeholder.png"
+          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
         />
       </div>
 
       {product?.morePictures?.map((picture) => (
         <div className="col-span-3" key={picture?.alt}>
           <Image
-            className="object-cover"
+            className="object-cover opacity-0 transition-opacity duration-700"
             src={picture?.image}
             placeholder="blur"
             blurDataURL="/placeholder.png"
@@ -38,6 +43,7 @@ const ImagesCard = ({ product }) => {
             height={870}
             alt={picture?.alt}
             onClick={() => handlerClick(picture?.image)}
+            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
           />
         </div>
       ))}
@@ -56,7 +62,6 @@ const ProductCardDetails = ({ product }) => {
     const quantity = existItem ? existItem.quantity + amount : amount;
 
     if (product.countInStock < quantity) {
-      alert("Sorry. Product is out of stock");
       return;
     }
 
@@ -69,22 +74,24 @@ const ProductCardDetails = ({ product }) => {
       <div className="flex flex-col gap-10">
         <div className="flex flex-col md:gap-4 text-sm md:text-md  ">
           <span className="text-black"> $ {product.price}.00</span>
-          <Rating
-            precision={0.5}
-            readOnly
-            style={{ color: "#FF865E" }}
-            name="size-medium"
-            defaultValue={product.rating}
-          />
 
           <p className="text-gray-700">
             {product.description}, lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum laboriosam minus,
             nam non rem ex accusantium id eum magni!
           </p>
+          <Rating precision={0.5} readOnly style={{ color: "#FF865E" }} value={product.rating} />
         </div>
 
         <form className="flex items-center gap-4" onSubmit={addToCartHandler}>
-          <Input autoComplete="off" required name="amount" className="w-16 h-full" size="md" variant="primary" />
+          <Input
+            type="number"
+            autoComplete="off"
+            required
+            name="amount"
+            className="w-16 h-full"
+            size="md"
+            variant="primary"
+          />
 
           <Button
             disabled={product.countInStock === existItem?.quantity ? true : false}

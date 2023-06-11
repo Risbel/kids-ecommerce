@@ -5,6 +5,7 @@ import { HiOutlineChevronLeft } from "react-icons/hi";
 import BaseLayout from "@/layouts/BaseLayout";
 import data from "@/utils/data";
 import ProductCardDetails from "@/components/ProductCardDetails";
+import RelatedProducts from "@/components/RelatedProducts";
 
 const DetailsProduct = () => {
   const { query } = useRouter();
@@ -38,7 +39,8 @@ const DetailsProduct = () => {
         </div>
       </div>
 
-      <ProductCardDetails product={product} />
+      <ProductCardDetails product={product} />      
+      <RelatedProducts product={product}/>
     </BaseLayout>
   );
 };

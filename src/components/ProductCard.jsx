@@ -1,7 +1,7 @@
 import { Store } from "@/utils/Store";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 const ProductCard = ({ product }) => {
   const { state } = useContext(Store);
@@ -10,15 +10,16 @@ const ProductCard = ({ product }) => {
   return (
     <div className="text-center">
       <Link className="relative" href={`/details/${product.slug}`}>
-        <div className="absolute p-4 z-20">{existItem?.quantity}</div>
-        {existItem?.quantity > product.countInStock - 1 && (
+        {existItem?.quantity === product.countInStock && (
           <div className="absolute z-20 right-2 top-2 md:right-4 md:top-4 bg-white rounded-3xl px-3 py-1">
             <span className="truncate text-xs md:text-sm text-gray-500">out of stock</span>
           </div>
         )}
         <div className="relative overflow-hidden">
           <Image
-            className={`object-cover ${product.morePictures && "hover:opacity-0 transition-opacity duration-700"}`}
+            className={`object-cover opacity-0 transition-opacity duration-700 ${
+              product.morePictures && " hover:opacity-0 "
+            }`}
             priority
             width={580}
             height={870}
@@ -26,10 +27,11 @@ const ProductCard = ({ product }) => {
             src={product.image}
             placeholder="blur"
             blurDataURL="/placeholder.png"
+            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
           />
           {product.morePictures && (
             <Image
-              className="absolute object-cover top-0 left-0 -z-10"
+              className="opacity-0 transition-opacity duration-700 absolute object-cover top-0 left-0 -z-10"
               priority
               width={580}
               height={870}
@@ -37,6 +39,7 @@ const ProductCard = ({ product }) => {
               src={product.morePictures[0].image}
               placeholder="blur"
               blurDataURL="/placeholder.png"
+              onLoadingComplete={(image) => image.classList.remove("opacity-0")}
             />
           )}
         </div>
@@ -44,7 +47,9 @@ const ProductCard = ({ product }) => {
 
       <h3 className="text-orange-600 font-semibold">{product.sexOrAge}</h3>
       <h2 className="text-gray-600 text-sm q  q">{product.description}</h2>
-      <span className="font-bold text-gray-600">${product.price}.00</span>
+      {existItem?.quantity !== product.countInStock && (
+        <span className="font-bold text-gray-600">${product.price}.00</span>
+      )}
     </div>
   );
 };
