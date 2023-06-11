@@ -38,7 +38,7 @@ export default function Cart() {
             <div className="flex justify-center" key={item.slug}>
               <div className="flex gap-8 py-4">
                 <div>
-                  <Image src={item.image} width={100} height={100} alt="" />
+                  <Image src={item.image} width={100} height={100} alt={item.slug} />
                 </div>
                 <div className="flex flex-col gap-2 text-xs md:text-sm">
                   <span className="font-semibold"> {item.name}</span>

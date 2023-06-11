@@ -9,39 +9,42 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="text-center">
-      <Link className="relative" href={`/details/${product.slug}`}>
-        {existItem?.quantity === product.countInStock && (
-          <div className="absolute z-20 right-2 top-2 md:right-4 md:top-4 bg-white rounded-3xl px-3 py-1">
-            <span className="truncate text-xs md:text-sm text-gray-500">out of stock</span>
-          </div>
-        )}
-        <div className="relative overflow-hidden">
-          <Image
-            className={`object-cover opacity-0 transition-opacity duration-700 ${
-              product.morePictures && " hover:opacity-0 "
-            }`}
-            priority
-            width={580}
-            height={870}
-            alt={product.name}
-            src={product.image}
-            placeholder="blur"
-            blurDataURL="/placeholder.png"
-            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-          />
-          {product.morePictures && (
+      <Link href={`/details/${product.slug}`}>
+        <div className="relative">
+          {existItem?.quantity === product.countInStock ||
+            (product.countInStock === 0 && (
+              <div className="absolute z-20 right-2 top-2 bg-white rounded-3xl px-3 py-1">
+                <span className="truncate text-xs md:text-sm text-blue-800 font-semibold">out of stock</span>
+              </div>
+            ))}
+          <div className="relative overflow-hidden">
             <Image
-              className="opacity-0 transition-opacity duration-700 absolute object-cover top-0 left-0 -z-10"
+              className={`object-cover opacity-0 transition-opacity duration-700 ${
+                product.morePictures && " hover:opacity-0 "
+              }`}
               priority
               width={580}
               height={870}
               alt={product.name}
-              src={product.morePictures[0].image}
+              src={product.image}
               placeholder="blur"
               blurDataURL="/placeholder.png"
               onLoadingComplete={(image) => image.classList.remove("opacity-0")}
             />
-          )}
+            {product.morePictures && (
+              <Image
+                className="opacity-0 transition-opacity duration-700 absolute object-cover top-0 left-0 -z-10"
+                priority
+                width={580}
+                height={870}
+                alt={product.name}
+                src={product.morePictures[0].image}
+                placeholder="blur"
+                blurDataURL="/placeholder.png"
+                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+              />
+            )}
+          </div>
         </div>
       </Link>
 

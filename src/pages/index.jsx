@@ -7,11 +7,12 @@ import BaseLayout from "@/layouts/BaseLayout";
 import Image from "next/image";
 
 const slides = [
-  "/girls-power.jpg",
-  "/boys-1-580x870.jpg",
-  "/for-home-12-1-580x870.jpg",
-  "/boys-5-580x870.jpg",
-  "/boys-8-580x870(1).jpg",
+  "/girls-9-580x870.jpg",
+  "/girls-8-1-580x870.jpg",
+  "/girls-3-1-580x870.jpg",
+  "/girls-11-1-580x870.jpg",
+  "/girls-10-580x870.jpg",
+  "/girls-3-2-580x870.jpg",
 ];
 
 const Home = () => {
@@ -31,7 +32,7 @@ const Home = () => {
             </div>
 
             <Image
-              className="object-cover h-full"
+              className="object-cover h-full opacity-0 transition-opacity duration-700"
               src="/slider-1.jpg"
               height={518}
               width={768}
@@ -39,6 +40,7 @@ const Home = () => {
               priority
               blurDataURL="/placeholder.png"
               placeholder="blur"
+              onLoadingComplete={(image) => image.classList.remove("opacity-0")}
             />
           </div>
           <div className="hidden md:block">

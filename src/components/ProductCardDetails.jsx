@@ -94,7 +94,7 @@ const ProductCardDetails = ({ product }) => {
           />
 
           <Button
-            disabled={product.countInStock === existItem?.quantity ? true : false}
+            disabled={product.countInStock === existItem?.quantity || product.countInStock === 0 ? true : false}
             type="submit"
             className="truncate"
           >
@@ -102,7 +102,7 @@ const ProductCardDetails = ({ product }) => {
           </Button>
         </form>
         <div>
-          {existItem && product.countInStock === existItem.quantity ? (
+          {existItem && product.countInStock === existItem.quantity || product.countInStock === 0 ? (
             <span className="text-gray-700 text-sm">Out of stock</span>
           ) : (
             <>

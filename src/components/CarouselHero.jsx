@@ -20,13 +20,14 @@ const CarouselHero = ({ slides, autoSlide = false, autoSlideInterval = 3000 }) =
         {slides.map((s) => (
           <Image
             style={{ transform: `translateX(-${curr * 100}%)` }}
-            className="duration-700 ease-out transition-transform"
+            className="duration-700 transition-all opacity-0"
             priority
             src={s}
             width={500}
             height={700}
             key={s}
             alt={s}
+            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
           />
         ))}
 

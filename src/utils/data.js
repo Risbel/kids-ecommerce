@@ -153,7 +153,7 @@ const data = {
       image: "/boys-8-580x870.jpg",
       price: 25,
       rating: 3.5,
-      countInStock: 15,
+      countInStock: 0,
       description: "A beautiful pullover",
     },
     {
@@ -229,9 +229,9 @@ const data = {
       sexOrAge: "For Girls",
       category: "toys",
       image: "/toys-5-580x870.jpg",
-      price: 4,
+      price: 5,
       rating: 3.5,
-      countInStock: 10,
+      countInStock: 0,
       description: "Soft and fluffy teddy",
     },
     {
@@ -253,6 +253,50 @@ const data = {
         {
           image: "/for-babies-1-580x870.jpg",
           alt: "overall-other",
+        },
+      ],
+    },
+    {
+      sku: "013",
+      name: "coat",
+      slug: "gray-coat",
+      sexOrAge: "For Babies",
+      category: "clothes",
+      image: "/for-babies-5-580x870.jpg",
+      price: 18,
+      rating: 4,
+      countInStock: 5,
+      description: "A beautiful coat color gray",
+      morePictures: [
+        {
+          image: "/for-babies-5-1-580x870.jpg",
+          alt: "Details of coat color gray",
+        },
+        {
+          image: "/for-babies-5-580x870.jpg",
+          alt: "Coat color gray for babies",
+        },
+      ],
+    },
+    {
+      sku: "014",
+      name: "coat",
+      slug: "blue-coat",
+      sexOrAge: "For Girls",
+      category: "clothes",
+      image: "/girls-3-1-580x870.jpg",
+      price: 25,
+      rating: 5,
+      countInStock: 0,
+      description: "Coat color blue",
+      morePictures: [
+        {
+          image: "/girls-3-2-580x870.jpg",
+          alt: "Details of coat color gray",
+        },
+        {
+          image: "/girls-3-1-580x870.jpg",
+          alt: "Coat color blue for girls",
         },
       ],
     },
