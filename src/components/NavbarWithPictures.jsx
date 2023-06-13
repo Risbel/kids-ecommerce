@@ -34,7 +34,16 @@ const NavbarWithPictures = () => {
             className="transition hover:drop-shadow-xl hover:-translate-y-0.5 duration-50 text-gray-600 hover:text-orange-600"
             href={image.urlPage}
           >
-            <Image className="w-auto h-auto pb-2" src={image.url} width={500} height={500} alt={image.name} priority />
+            <Image
+              className="pb-2 h-auto w-auto opacity-0 transition-opacity duration-700"
+              src={image.url}
+              width={500}
+              height={500}
+              alt={image.name}
+              priority
+              onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+            />
+
             <span className="font-semibold text-xs md:text-sm lg:text-lg">{image.name}</span>
           </Link>
         </div>

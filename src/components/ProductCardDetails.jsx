@@ -5,9 +5,12 @@ import { Store } from "@/utils/Store";
 import Input from "./Input";
 import Link from "next/link";
 import { Rating } from "@mui/material";
+import clsx from "classnames/bind";
 
 const ImagesCard = ({ product }) => {
   const [image, setImage] = useState(product.image);
+  const [posicionDiv, setPosicionDiv] = useState({ x: 0, y: 0 });
+  const [activeZoom, setActiveZoom] = useState(false);
 
   useEffect(() => {
     setImage(product.image);
@@ -17,28 +20,81 @@ const ImagesCard = ({ product }) => {
     setImage(picture);
   };
 
+  const obtenerCoordenadas = (event) => {
+    const div = document.getElementById("miDiv");
+    const rect = div.getBoundingClientRect();
+    const coordenadaX = Math.floor(event.clientX - rect.left);
+    const coordenadaY = Math.floor(event.clientY - rect.top);
+    setPosicionDiv({ x: coordenadaX, y: coordenadaY });
+  };
+
   return (
     <div className="grid grid-cols-12 gap-2">
-      <div className="col-span-12">
-        <Image
-          className="object-cover opacity-0 transition-opacity duration-700"
-          src={image}
-          width={580}
-          height={870}
-          alt={product.slug}
-          placeholder="blur"
-          blurDataURL="/placeholder.png"
-          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-        />
+      <div className="col-span-12 relative">
+        <div
+          id="miDiv"
+          onClick={() => setActiveZoom((prev) => !prev)}
+          onMouseMove={obtenerCoordenadas}
+          onMouseLeave={() => setPosicionDiv({ x: 0, y: 0 })}
+          className="relative overflow-hidden"
+        >
+          <Image
+            className="object-cover opacity-0 transition-all duration-700"
+            src={image}
+            placeholder="blur"
+            priority
+            blurDataURL={image}
+            width={580}
+            height={870}
+            alt={product.slug}
+            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+          />
+
+          {activeZoom && posicionDiv.x !== 0 && (
+            <div
+              className={clsx(
+                "hidden md:block absolute z-10 h-1/2 w-1/2 border border-white border-dashed -translate-x-1/2 -translate-y-1/2"
+              )}
+              style={{
+                left: `${posicionDiv.x}px`,
+                top: `${posicionDiv.y}px`,
+              }}
+            ></div>
+          )}
+        </div>
+
+        {activeZoom && (
+          <div className={`hidden md:block absolute z-40 translate-x-full -translate-y-full overflow-hidden`}>
+            <Image
+              className={clsx(
+                "relative scale-[200%]",
+                "translate-x-1/2 translate-y-1/2",
+                posicionDiv.x === 0 && "hidden"
+              )}
+              src={image}
+              placeholder="blur"
+              priority
+              blurDataURL={image}
+              width={580}
+              height={870}
+              alt={product.slug}
+              style={{
+                left: `-${posicionDiv.x}px`,
+                top: `-${posicionDiv.y}px`,
+              }}
+            />
+          </div>
+        )}
       </div>
 
       {product?.morePictures?.map((picture) => (
         <div className="col-span-3" key={picture?.alt}>
           <Image
-            className="object-cover opacity-0 transition-opacity duration-700"
+            className="object-cover opacity-0 transition-opacity duration-500"
             src={picture?.image}
             placeholder="blur"
-            blurDataURL="/placeholder.png"
+            priority
+            blurDataURL={picture?.image}
             width={580}
             height={870}
             alt={picture?.alt}
@@ -102,7 +158,7 @@ const ProductCardDetails = ({ product }) => {
           </Button>
         </form>
         <div>
-          {existItem && product.countInStock === existItem.quantity || product.countInStock === 0 ? (
+          {(existItem && product.countInStock === existItem.quantity) || product.countInStock === 0 ? (
             <span className="text-gray-700 text-sm">Out of stock</span>
           ) : (
             <>

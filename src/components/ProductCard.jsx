@@ -28,19 +28,18 @@ const ProductCard = ({ product }) => {
               alt={product.name}
               src={product.image}
               placeholder="blur"
-              blurDataURL="/placeholder.png"
+              blurDataURL={product.image}
               onLoadingComplete={(image) => image.classList.remove("opacity-0")}
             />
             {product.morePictures && (
               <Image
-                className="opacity-0 transition-opacity duration-700 absolute object-cover top-0 left-0 -z-10"
-                priority
+                className="opacity-0 transition-opacity duration-500 absolute object-cover top-0 left-0 -z-10"
                 width={580}
                 height={870}
                 alt={product.name}
                 src={product.morePictures[0].image}
                 placeholder="blur"
-                blurDataURL="/placeholder.png"
+                blurDataURL={product.morePictures[0].image}
                 onLoadingComplete={(image) => image.classList.remove("opacity-0")}
               />
             )}
