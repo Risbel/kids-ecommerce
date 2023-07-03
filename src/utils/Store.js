@@ -12,13 +12,12 @@ function reducer(state, action) {
   switch (action.type) {
     case "CARD_ADD_ITEM": {
       const newItem = action.payload;
-      const existItem = state.cart.cartItems.find((item) => item.slug === newItem.slug);
+      const existNewItem = state.cart.cartItems.find((item) => item.slug === newItem.slug);
 
       //una condicion para actualizar si existe el item o guardar si no existe
-      const cartItems = existItem
-        ? state.cart.cartItems.map((item) => (item.slug === existItem.slug ? newItem : item))
-        : //de lo contrario si no existe entonces guardamos el primero
-          [...state.cart.cartItems, newItem];
+      const cartItems = existNewItem
+        ? state.cart.cartItems.map((item) => (item.slug === existNewItem.slug ? newItem : item))
+        : [...state.cart.cartItems, newItem]; //de lo contrario si no existe entonces guardamos el primero
 
       return { ...state, cart: { ...state.cart, cartItems } };
     }
