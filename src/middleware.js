@@ -19,5 +19,22 @@ export async function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/"], //todas las rutas que requieren estar logeado (rutas protegidas)
+  matcher: [
+    "/",
+    "/about-us",
+    "/all",
+    "/boys",
+    "/careers",
+    "/cart",
+    "/clothes",
+    "/components",
+    "/contact",
+    "/faq",
+    "/for-baby",
+    "/girls",
+    "/home-and-toys",
+    "/sales",
+    "/terms-and-conditions",
+    "/toys",
+  ], //todas las rutas que requieren estar logeado (rutas protegidas)
 };

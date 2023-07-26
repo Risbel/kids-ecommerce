@@ -1,8 +1,10 @@
 import { useState } from "react";
 import sendCredentials from "@/services/sendCredentials";
+import { useRouter } from "next/router";
 
 const useHandleSubmitCredentials = (initialState) => {
   const [credentials, setCredentials] = useState(initialState);
+  const router = useRouter();
 
   const handleChange = (e) => {
     setCredentials({
@@ -11,10 +13,14 @@ const useHandleSubmitCredentials = (initialState) => {
     });
   };
 
-  const submitCredentials = (e) => {
+  const submitCredentials = async (e) => {
     e.preventDefault();
-    sendCredentials(credentials);
+    const resp = await sendCredentials(credentials);
+
     setCredentials(initialState);
+    if (resp) {
+      router.push("/");
+    }
   };
   return { handleChange, submitCredentials, credentials };
 };

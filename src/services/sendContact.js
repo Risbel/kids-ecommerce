@@ -1,5 +1,5 @@
 const sendContact = async (formData) => {
-  const response = await fetch(`https://e-commerce-backend-self.vercel.app/send-message`, {
+  const response = await fetch(`http://localhost:4000/send-message`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

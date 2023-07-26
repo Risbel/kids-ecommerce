@@ -1,11 +1,17 @@
 import axios from "axios";
 
 const sendCredentials = async (formData) => {
-  const response = await axios.post("https://e-commerce-backend-self.vercel.app/login", formData, {
-    withCredentials: true, // Habilita el envío de cookies en la solicitud
-  });
+  try {
+    const response = await axios.post("http://localhost:4000/login", formData, {
+      withCredentials: true,
+    });
 
-  console.log("Response:", response);
+    return response.data;
+  } catch (error) {
+    if (error.response.status === 401) {
+      return error;
+    }
+  }
 };
 
 export default sendCredentials;
