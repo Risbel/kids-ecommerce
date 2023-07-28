@@ -1,13 +1,12 @@
+import httpService from "@/config/axios.config";
+
 const sendContact = async (formData) => {
-  const response = await fetch(`http://localhost:4000/send-message`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
+  const response = await httpService.post("/send-message", formData, {
+    withCredentials: true,
   });
 
-  if (!response.ok) {
+  console.log(response);
+  if (!response) {
     throw new Error("Error sending contact");
   }
 };

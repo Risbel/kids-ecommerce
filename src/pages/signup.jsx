@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import useHandleSubmitSignup from "@/hooks/useHandleSubmitSignup";
 import Link from "next/link";
 import React from "react";
@@ -9,8 +8,8 @@ const Signup = () => {
     lastName: "",
     email: "",
     phone: "",
-    imageUrl: "",
     password: "",
+    imageUrl: "",
   });
 
   return (

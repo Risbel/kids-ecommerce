@@ -1,14 +1,14 @@
-import axios from "axios";
+import httpService from "@/config/axios.config";
 
 const sendCredentials = async (formData) => {
   try {
-    const response = await axios.post("http://localhost:4000/login", formData, {
+    const response = await httpService.post("/login", formData, {
       withCredentials: true,
     });
 
     return response.data;
   } catch (error) {
-    if (error.response.status === 401) {
+    if (error) {
       return error;
     }
   }

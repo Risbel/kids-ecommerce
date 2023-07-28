@@ -1,8 +1,8 @@
-import axios from "axios";
+import httpService from "@/config/axios.config";
 
 export const sendPersonalDates = async (personalDates) => {
   try {
-    const resp = await axios.post("http://localhost:4000/signup", personalDates, {
+    const resp = await httpService.post("/signup", personalDates, {
       withCredentials: true,
     });
     return resp.data;
