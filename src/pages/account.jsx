@@ -1,14 +1,10 @@
-import httpService from "@/config/axios.config";
 import BaseLayout from "@/layouts/BaseLayout";
 import { useRouter } from "next/router";
-import React from "react";
 
 const Account = () => {
   const router = useRouter();
   const logout = async () => {
-    const resp = await httpService.get("/logout", {
-      withCredentials: true,
-    });
+    localStorage.removeItem("accessToken");
 
     router.push("/login");
   };

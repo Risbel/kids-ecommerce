@@ -1,9 +1,11 @@
 import { useState } from "react";
 import sendCredentials from "@/services/sendCredentials";
 import { useRouter } from "next/router";
+import { useMutation } from "@tanstack/react-query";
 
 const useHandleSubmitCredentials = (initialState) => {
   const [credentials, setCredentials] = useState(initialState);
+  const [loginResponse, setLoginResponse] = useState("");
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -13,16 +15,22 @@ const useHandleSubmitCredentials = (initialState) => {
     });
   };
 
-  const submitCredentials = async (e) => {
-    e.preventDefault();
-    const resp = await sendCredentials(credentials);
+  const { data, mutate: submitCredentials } = useMutation({
+    mutationFn: (credentials) => sendCredentials(credentials),
+    onSuccess: (resp) => {
+      if (resp.response) {
+        const { response } = resp;
+        const { data } = response;
 
-    setCredentials(initialState);
-    if (resp) {
-      router.push("/");
-    }
-  };
-  return { handleChange, submitCredentials, credentials };
+        return setLoginResponse(data.error);
+      } else {
+        setLoginResponse("Successfully authenticated");
+        router.push("/");
+      }
+    },
+  });
+
+  return { handleChange, submitCredentials, credentials, loginResponse, data };
 };
 
 export default useHandleSubmitCredentials;

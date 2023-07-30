@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const Signup = () => {
-  const { handleChange, submitPersonalDates, personalDates } = useHandleSubmitSignup({
+  const { handleChange, submitPersonalDates, personalDates, signupResponse } = useHandleSubmitSignup({
     name: "",
     lastName: "",
     email: "",
@@ -11,6 +11,11 @@ const Signup = () => {
     password: "",
     imageUrl: "",
   });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitPersonalDates(personalDates);
+  };
 
   return (
     <div className="p-16">
@@ -21,7 +26,7 @@ const Signup = () => {
       </div>
 
       <div className="flex justify-center">
-        <form className="flex flex-col gap-4 border p-4" onSubmit={submitPersonalDates}>
+        <form className="flex flex-col gap-4 border p-4" onSubmit={handleSubmit}>
           <input
             autoComplete="off"
             onChange={handleChange}
@@ -76,6 +81,7 @@ const Signup = () => {
             placeholder="imageUrl"
           />
           <button type="submit">Signup</button>
+          <span className="text-center">{signupResponse}</span>
         </form>
       </div>
     </div>
