@@ -2,6 +2,7 @@ import useHandleSubmitCredentials from "@/hooks/useHandleSubmitCredentials";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 
@@ -16,9 +17,14 @@ const Login = () => {
     submitCredentials(credentials);
   };
 
-  const handleGoogleSignin = (e) => {
-    e.preventDefault();
+  const handleGoogleSignin = async () => {
     signIn("google", {
+      callbackUrl: process.env.NEXT_PUBLIC_BASE_URL_CLIENT,
+    });
+  };
+
+  const handleGithubSignin = async () => {
+    signIn("github", {
       callbackUrl: process.env.NEXT_PUBLIC_BASE_URL_CLIENT,
     });
   };
@@ -54,12 +60,22 @@ const Login = () => {
             />
             <Button type="submit">Login</Button>
             <span className="text-center">or</span>
-            <div className="flex gap-3 items-center bg-white rounded-md p-2 hover:scale-105">
-              <FcGoogle className="scale-125" />
-              <button type="button" onClick={(e) => handleGoogleSignin(e)}>
-                Login with Google
-              </button>
-            </div>
+
+            <button
+              className="flex justify-center gap-3 items-center bg-white rounded-md p-2 hover:scale-105"
+              type="button"
+              onClick={handleGoogleSignin}
+            >
+              <FcGoogle className="scale-125" /> Login with Google
+            </button>
+
+            <button
+              className="flex justify-center gap-3 items-center bg-white rounded-md p-2 hover:scale-105"
+              type="button"
+              onClick={handleGithubSignin}
+            >
+              <FaGithub className="scale-125" /> Login with Github
+            </button>
 
             <span className="text-center">{loginResponse}</span>
           </div>

@@ -16,11 +16,11 @@ const Account = () => {
     <BaseLayout>
       <div className="flex flex-col gap-4 items-center md:32 lg:px-64">
         <h1>My Acount</h1>
+        <div className="rounded-full overflow-hidden">
+          <Image src={session?.user.image} alt="image-next-auth" width={100} height={100} />
+        </div>
         <h1>{session?.user.name}</h1>
         <h1>{session?.user.email}</h1>
-        <div className="rounded-full overflow-hidden">
-          <Image src={session?.user.image} alt="image-next-auth" width={250} height={250} />
-        </div>
       </div>
       <div className="flex justify-center mt-6">
         <Button onClick={logout}>Log out</Button>
