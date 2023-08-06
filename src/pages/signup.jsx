@@ -1,3 +1,5 @@
+import Button from "@/components/Button";
+import Input from "@/components/Input";
 import useHandleSubmitSignup from "@/hooks/useHandleSubmitSignup";
 import Link from "next/link";
 import React from "react";
@@ -19,15 +21,18 @@ const Signup = () => {
 
   return (
     <div className="p-16">
-      <div className="flex justify-center sm:justify-start pb-16">
-        <Link className="border border-gray-400 border-dashed p-2 ml-4 hover:bg-orange-kids" href="/login">
+      <div className="flex justify-start pb-8">
+        <Link
+          className="border border-gray-400 border-dashed p-2 ml-4 bg-orange-200 hover:bg-orange-kids"
+          href="/login"
+        >
           Signin
         </Link>
       </div>
 
       <div className="flex justify-center">
-        <form className="flex flex-col gap-4 border p-4" onSubmit={handleSubmit}>
-          <input
+        <form className="flex flex-col gap-4 border p-4 bg-orange-100" onSubmit={handleSubmit}>
+          <Input
             autoComplete="off"
             onChange={handleChange}
             value={personalDates.name}
@@ -35,7 +40,7 @@ const Signup = () => {
             type="text"
             placeholder="name"
           />
-          <input
+          <Input
             autoComplete="off"
             required
             onChange={handleChange}
@@ -44,7 +49,7 @@ const Signup = () => {
             type="text"
             placeholder="last name"
           />
-          <input
+          <Input
             autoComplete="off"
             required
             onChange={handleChange}
@@ -53,7 +58,7 @@ const Signup = () => {
             type="email"
             placeholder="email"
           />
-          <input
+          <Input
             autoComplete="off"
             required
             onChange={handleChange}
@@ -62,7 +67,7 @@ const Signup = () => {
             type="text"
             placeholder="phone number"
           />
-          <input
+          <Input
             autoComplete="off"
             required
             onChange={handleChange}
@@ -71,16 +76,17 @@ const Signup = () => {
             type="password"
             placeholder="password"
           />
-          <input
+          <Input
             autoComplete="off"
             required
             onChange={handleChange}
             value={personalDates.imageUrl}
             name="imageUrl"
             type="text"
-            placeholder="imageUrl"
+            placeholder="image URL"
           />
-          <button type="submit">Signup</button>
+
+          <Button type="submit">Signup</Button>
           <span className="text-center">{signupResponse}</span>
         </form>
       </div>

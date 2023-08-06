@@ -5,6 +5,7 @@ import NavbarWithPictures from "@/components/NavbarWithPictures";
 import NewArribals from "@/components/NewArribals";
 import BaseLayout from "@/layouts/BaseLayout";
 import Image from "next/image";
+import { useSession, getSession } from "next-auth/react";
 
 const slides = [
   "/girls-9-580x870.jpg",
@@ -53,6 +54,23 @@ const Home = () => {
       </div>
     </BaseLayout>
   );
+};
+
+export const getServerSideProps = async ({ req }) => {
+  const session = await getSession({ req });
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
 };
 
 export default Home;
