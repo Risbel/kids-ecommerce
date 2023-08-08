@@ -5,16 +5,29 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import { useRouter } from "next/router";
 
 const Login = () => {
-  const { handleChange, submitCredentials, credentials, loginResponse, data } = useHandleSubmitCredentials({
+  const { handleChange, credentials } = useHandleSubmitCredentials({
     email: "",
     password: "",
   });
 
-  const onSubmit = (e) => {
+  const router = useRouter();
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    submitCredentials(credentials);
+
+    const status = await signIn("credentials", {
+      redirect: false,
+      email: credentials.email,
+      password: credentials.password,
+      callbackUrl: "/",
+    });
+
+    if (status.ok) {
+      router.push(status.url);
+    }
   };
 
   const handleGoogleSignin = async () => {
@@ -76,8 +89,6 @@ const Login = () => {
             >
               <FaGithub className="scale-125" /> Login with Github
             </button>
-
-            <span className="text-center">{loginResponse}</span>
           </div>
         </form>
       </div>

@@ -78,7 +78,6 @@ const Signup = () => {
           />
           <Input
             autoComplete="off"
-            required
             onChange={handleChange}
             value={personalDates.imageUrl}
             name="imageUrl"

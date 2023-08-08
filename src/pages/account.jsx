@@ -17,7 +17,13 @@ const Account = () => {
       <div className="flex flex-col gap-4 items-center md:32 lg:px-64">
         <h1>My Acount</h1>
         <div className="rounded-full overflow-hidden">
-          <Image src={session?.user.image} alt="image-next-auth" width={100} height={100} />
+          {session?.user.image ? (
+            <Image src={session?.user.image} alt="image-next-auth" width={100} height={100} />
+          ) : (
+            <div className="flex items-center justify-center bg-orange-300 w-24 h-24 font-bold text-5xl text-white">
+              {session?.user.name[0].toUpperCase()}
+            </div>
+          )}
         </div>
         <h1>{session?.user.name}</h1>
         <h1>{session?.user.email}</h1>
