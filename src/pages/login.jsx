@@ -5,41 +5,30 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
-import { useRouter } from "next/router";
 
 const Login = () => {
-  const { handleChange, credentials } = useHandleSubmitCredentials({
-    email: "",
-    password: "",
-  });
-
-  const router = useRouter();
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-
-    const status = await signIn("credentials", {
-      redirect: false,
-      email: credentials.email,
-      password: credentials.password,
-      callbackUrl: "/",
+  const { handleChange, credentials, isLoading, setIsLoading, error, setError, onSubmitWithCredentials } =
+    useHandleSubmitCredentials({
+      email: "",
+      password: "",
     });
-
-    if (status.ok) {
-      router.push(status.url);
-    }
-  };
 
   const handleGoogleSignin = async () => {
-    signIn("google", {
+    setError("");
+    setIsLoading(true);
+    await signIn("google", {
       callbackUrl: process.env.NEXT_PUBLIC_BASE_URL_CLIENT,
     });
+    setIsLoading(false);
   };
 
   const handleGithubSignin = async () => {
+    setError("");
+    setIsLoading(true);
     signIn("github", {
       callbackUrl: process.env.NEXT_PUBLIC_BASE_URL_CLIENT,
     });
+    setIsLoading(false);
   };
 
   return (
@@ -53,7 +42,7 @@ const Login = () => {
         </Link>
       </div>
       <div className="flex justify-center items-center">
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmitWithCredentials}>
           <div className="flex flex-col gap-4 border p-4 bg-orange-100">
             <Input
               required
@@ -89,6 +78,8 @@ const Login = () => {
             >
               <FaGithub className="scale-125" /> Login with Github
             </button>
+            {<span className="text-red-600 text-center">{error}</span>}
+            {isLoading && <span className="text-center">Loading...</span>}
           </div>
         </form>
       </div>
